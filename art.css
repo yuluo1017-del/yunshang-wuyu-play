@@ -1,0 +1,69 @@
+.avatar.generated{width:330px;height:500px}
+.hero-stage .avatar.generated{margin-bottom:48px}
+.avatar.generated .aura{width:280px;height:280px;left:5px;top:110px}
+.character-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 16px 18px #2f464138);z-index:2}
+.character-art.layer{filter:none;--dx:0%;--dy:0%;--scale:1;transform:translate(var(--dx),var(--dy)) scale(var(--scale));transform-origin:50% 50%}.character-art.layer.base{z-index:1}.character-art.layer.shoes{z-index:2;transform-origin:50% 100%}.character-art.layer.outfit{z-index:3}.character-art.layer.hair{z-index:4;transform-origin:50% 10%}.character-art.layer.head{z-index:5;transform:translate(var(--dx),calc(var(--dy) - 6%)) scale(.72) scale(var(--scale));transform-origin:50% 0}.avatar.layered{isolation:isolate}
+.look-tags{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);display:flex;justify-content:center;gap:5px;width:390px;z-index:4;opacity:0}
+.dressing-stage .look-tags{opacity:0}
+.look-tags span{padding:5px 8px;border:1px solid color-mix(in srgb,var(--tag),white 25%);background:#fffdf5e8;border-radius:15px;color:#3c524c;font-size:9px;white-space:nowrap;box-shadow:0 4px 12px #304b4322}
+.dressing-stage .avatar.generated{width:330px;height:500px;margin:0 auto}
+@media(max-width:600px){.avatar.generated,.dressing-stage .avatar.generated{width:267px;height:400px}.look-tags{width:320px;flex-wrap:wrap}}
+.item-art{background:linear-gradient(145deg,color-mix(in srgb,var(--item),white 72%),color-mix(in srgb,var(--item),white 38%));overflow:hidden;text-shadow:none}.item-art img{width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 5px 7px #30483b2e)}.character-art.layer.prop{z-index:6}.dressing-stage.has-background{background-image:linear-gradient(#ffffff20,#ffffff18),var(--wardrobe-bg);background-size:cover;background-position:center}.dressing-stage.has-background:before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,#fff3,transparent 45%,#fff2);pointer-events:none}.item-art.background-preview img{object-fit:cover;width:100%;height:100%}
+.dressing-stage .selected-layer{pointer-events:auto;cursor:grab;touch-action:none}.dressing-stage .selected-layer.dragging{cursor:grabbing}.look-actions{position:relative;z-index:6;display:none;align-items:center;justify-content:center;padding:8px 12px 16px}.dressing-stage.dirty .look-actions{display:flex;animation:save-reveal .28s ease-out}.dressing-stage #dragHint{max-width:290px;text-align:center;line-height:1.5;min-height:34px}.dressing-stage .character-art:not(.selected-layer){pointer-events:none}
+.pet-art{position:absolute;z-index:5;width:25%;height:28%;object-fit:contain;right:2%;bottom:5%;--dx:0%;--dy:0%;--scale:1;transform:translate(var(--dx),var(--dy)) scale(var(--scale));transform-origin:50% 100%;filter:drop-shadow(0 7px 8px #3b4c4533)}.pet-art[data-item-id="pet-crane"]{width:22%;height:36%;right:3%;bottom:4%}.dress-title{text-align:center;position:relative;z-index:7}.dress-title h3{margin:0!important}.dress-title p{margin:5px auto 0}.dress-canvas{width:100%;height:500px;display:grid;place-items:center;position:relative}.dressing-stage{justify-content:flex-start!important;align-items:stretch!important;padding:20px 16px 6px!important}.sticker-controls{position:relative;z-index:7;display:grid;grid-template-columns:42px minmax(150px,1fr) 42px;gap:10px;align-items:end;padding:8px 12px}.sticker-controls label{display:grid;gap:5px;text-align:center;font-size:11px;color:#64736d}.sticker-controls input{width:100%;accent-color:#376f65}.scale-button{width:42px;height:42px;padding:0!important;border-radius:50%;font-size:21px;line-height:1}.item-art.pet-preview img{max-width:84%;max-height:94%}.question-picture{display:block;width:100%;max-height:330px;object-fit:cover;border-radius:12px;margin:16px 0 20px;border:1px solid #fff;box-shadow:0 8px 24px #3e5b5022}.activity{margin:20px 0}.activity>p{font-size:13px;color:#6f7770}.activity-result{min-height:52px;border:1px dashed #9cb5aa;background:#f7fbf8;border-radius:10px;padding:14px;margin-bottom:12px;color:#2a5c52}.activity-cards{display:flex;flex-wrap:wrap;gap:9px}.activity-cards button{padding:11px 14px;border:1px solid #cbd8d2;background:#fff;border-radius:10px;cursor:pointer}.activity-cards button.picked{background:#dcece5;border-color:#4d8174;color:#214f49}.activity-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}.explanation{margin:12px 0 0;padding-top:12px;border-top:1px solid currentColor;line-height:1.7}.explanation strong,.mistake-explanation b,.mistake-explanation span{display:block}.mistake-explanation{background:#f5efe2;border-radius:9px;padding:12px;margin:12px 0;font-size:13px;line-height:1.65}@keyframes save-reveal{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+.shop-pending{grid-column:1/-1;background:#fffaf2;border:1px solid #e6d7be;border-radius:16px;padding:42px;text-align:center;color:#385b54}.shop-pending b{font:26px "STKaiti","KaiTi",serif}.shop-pending p{max-width:520px;margin:12px auto 0;line-height:1.8;color:#6f7770}
+.poetry-board{max-width:760px;margin:20px auto;text-align:center;padding:42px;position:relative;overflow:hidden}.poetry-board:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,#f2c9cb55,transparent 24%),linear-gradient(140deg,#fffaf2,#edf3ed);z-index:0}.poetry-board>*{position:relative;z-index:1}.poetry-seal{width:58px;height:58px;margin:auto;display:grid;place-items:center;border-radius:50%;background:#b85c6b;color:#fff;font:30px "STKaiti";box-shadow:inset 0 0 0 4px #ffffff55}.poetry-meta{color:#8a6a60;font-size:12px;letter-spacing:.14em}.poetry-first{font:clamp(24px,4vw,38px)/1.7 "STKaiti","KaiTi",serif;margin:20px auto;max-width:620px}.poetry-prompt{font-size:13px;color:#6f7770}.poetry-choices{display:grid;gap:10px;margin:20px auto;max-width:620px}.poetry-choices button{padding:14px 18px;border:1px solid #c8d4ce;border-radius:11px;background:#fffdf8;color:#334a44;font-size:16px;cursor:pointer}.poetry-choices button:hover{border-color:#5e8b7e;background:#f0f7f3}.poetry-choices button.correct{background:#e2f1e7;border-color:#69a17f}.poetry-choices button.wrong{background:#fae4e1;border-color:#c86d6d}.poetry-answer{margin:18px auto;padding:16px;border-radius:10px;max-width:620px;text-align:left}.poetry-answer.ok{background:#e5f2e8}.poetry-answer.no{background:#f7e8e0}.poetry-answer b,.poetry-answer strong,.poetry-answer span{display:block}.poetry-answer strong{font:22px/1.6 "STKaiti";margin:5px 0}.poetry-answer span{color:#6f7770;font-size:12px}.poetry-answer p{line-height:1.7;margin-bottom:0}
+
+/* Fixed portrait scene: background at the bottom, avatar layers above, frame on top. */
+.dressing-stage.has-background{background-image:none}
+.dressing-stage.has-background:before{display:none}
+.dress-canvas{height:514px}
+.scene-frame{width:330px;height:500px;position:relative;overflow:hidden;isolation:isolate;border:7px solid #fffdf4;border-radius:46% 46% 18px 18px/17% 17% 18px 18px;outline:1px solid #c7b995;box-shadow:0 18px 42px #374c4530,inset 0 0 0 1px #fff}
+.scene-frame:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,#fbfaf4 0%,#edf4ef 58%,#f7eee9 100%)}
+.scene-frame.has-background:before{background-image:linear-gradient(180deg,#fff2 0%,transparent 48%,#fff1 100%),var(--wardrobe-bg);background-size:cover;background-position:center}
+.scene-frame:after{content:"";position:absolute;inset:10px;z-index:6;border:1px solid #fff9;border-radius:43% 43% 11px 11px/15% 15% 11px 11px;box-shadow:inset 0 0 28px #ffffff45;pointer-events:none}
+.scene-frame .avatar{position:relative;z-index:2}
+.item-art.background-preview{aspect-ratio:2/3;height:auto;max-height:210px;background:#edf1ed}
+.item-art.background-preview img{object-fit:cover;width:100%;height:100%;filter:none}
+.shop-item:has(.background-preview) p{color:#80684f}
+.shop-item:has(.background-preview).wearing{box-shadow:inset 0 0 0 2px #9d8461,0 10px 26px #6b55451f}
+.hero-stage.has-saved-background{background-image:linear-gradient(180deg,#fff2 0%,transparent 48%,#fff1 100%),var(--home-bg);background-size:cover;background-position:center}
+.hero-stage.has-saved-background .moon,.hero-stage.has-saved-background .mountains,.hero-stage.has-saved-background .pagoda{opacity:.08}
+@media(max-width:600px){.scene-frame{width:267px;height:400px}.dress-canvas{height:414px}}
+
+/* Established dress-up pattern: choose an equipped slot first, then adjust it. */
+.equipped-layers{position:relative;z-index:8;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding:10px 4px 4px}
+.equipped-caption{position:relative;z-index:8;margin-top:8px;text-align:center;font-size:11px;font-weight:700;color:#53645e}
+.equipped-layers button{min-width:0;min-height:52px;padding:6px 4px;border:1px solid #b8c8c1;border-radius:10px;background:#fffaf5;color:#465a54;cursor:pointer}
+.equipped-layers button b,.equipped-layers button span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.equipped-layers button b{font-size:12px}.equipped-layers button span{margin-top:3px;font-size:9px;color:#75817c}
+.equipped-layers button.active{border-color:#376f65;background:#dcece5;color:#214f49;box-shadow:inset 0 0 0 1px #376f65}
+.equipped-layers button:focus-visible,.nudge-controls button:focus-visible{outline:3px solid #b85c6b;outline-offset:2px}
+.sticker-controls{grid-template-rows:auto auto}
+.nudge-controls{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,44px);justify-content:center;gap:7px;padding-top:4px}
+.nudge-controls button{min-width:44px;min-height:44px;padding:0;border:1px solid #a7b9b1;border-radius:10px;background:#fffaf5;color:#214f49;font-weight:700;cursor:pointer}
+.nudge-controls button[data-layer-reset]{width:auto;padding-inline:7px;font-size:11px}
+.selected-layer{filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 5px #376f6580)!important}
+.shop-item p{min-height:16px}
+@media(max-width:600px){.equipped-layers{grid-template-columns:repeat(3,minmax(0,1fr))}.equipped-layers button{min-height:48px}.nudge-controls{grid-template-columns:repeat(5,42px);gap:5px}.nudge-controls button{min-width:42px;min-height:42px}}
+
+/* Enlarged wardrobe workspace with a stable two-row control grid. */
+.wardrobe-page{max-width:1320px}
+.wardrobe-layout{grid-template-columns:440px minmax(0,1fr);gap:32px;align-items:start}
+.dressing-stage{width:440px;min-height:940px;padding:22px 16px 18px!important;border-radius:46% 46% 22px 22px/15% 15% 22px 22px}
+.dress-canvas{height:614px}
+.scene-frame{width:400px;height:600px}
+.dressing-stage .avatar.generated{width:400px;height:600px}
+.equipped-caption{margin-top:12px;font-size:12px}
+.equipped-layers{grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:10px 2px 6px}
+.equipped-layers button{grid-column:span 2;min-height:58px;padding:8px 6px}
+.equipped-layers button:nth-last-child(2):nth-child(4){grid-column:2/span 2}
+.equipped-layers button b{font-size:13px}.equipped-layers button span{font-size:10px}
+.sticker-controls{grid-template-columns:46px minmax(0,1fr) 46px;gap:12px;padding:10px 4px 8px}
+.scale-button{width:46px;height:46px}
+.nudge-controls{grid-template-columns:repeat(5,48px);gap:9px;padding-top:7px}
+.nudge-controls button{min-width:48px;min-height:46px}
+.look-actions{padding:10px 4px 4px}.look-actions button{width:100%;min-height:46px}
+.shop-tabs{flex-wrap:wrap}
+@media(max-width:1100px){.wardrobe-layout{grid-template-columns:1fr}.dressing-stage{margin:0 auto}.shop-tabs{margin-top:24px}}
+@media(max-width:600px){.dressing-stage{width:100%;min-height:760px;padding-inline:10px!important}.dress-canvas{height:414px}.scene-frame{width:267px;height:400px}.dressing-stage .avatar.generated{width:267px;height:400px}.equipped-layers{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.equipped-layers button{grid-column:span 2;min-height:52px}.sticker-controls{grid-template-columns:42px minmax(0,1fr) 42px;gap:8px}.scale-button{width:42px;height:42px}.nudge-controls{grid-template-columns:repeat(5,42px);gap:5px}.nudge-controls button{min-width:42px;min-height:42px}}

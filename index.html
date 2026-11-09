@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#f7efe4" />
+  <title>云裳物语 · 古风仙境学习冒险</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="art.css" />
+</head>
+<body>
+  <div class="mist mist-a"></div><div class="mist mist-b"></div>
+  <header class="topbar">
+    <button class="brand" data-view="home" aria-label="回到仙境首页"><span class="seal">云</span><span><b>云裳物语</b><small>古风仙境学习冒险</small></span></button>
+    <nav id="nav" aria-label="主要页面">
+      <button data-view="home" class="active">仙境</button><button data-view="map">学习地图</button><button data-view="daily">今日修习</button><button data-view="poetry">诗词接龙</button><button data-view="mistakes">错题阁</button><button data-view="wardrobe">霓裳阁</button>
+    </nav>
+    <div class="shell-pill" aria-label="小贝壳余额"><span>◒</span><b id="shellCount">0</b> 小贝壳</div>
+  </header>
+
+  <main>
+    <section id="home" class="view active hero">
+      <div class="hero-copy">
+        <p class="eyebrow">西城区小学 · 一二年级教材同步</p>
+        <h1>读一卷书，<br><em>赴一场仙境之约</em></h1>
+        <p>沿教材单元闯关，语文、数学、英语每日各练 5 题。每一次认真作答，都会化成一枚可以装点云裳的小贝壳。</p>
+        <div class="hero-actions"><button class="primary" data-view="daily">开始今日修习</button><button class="secondary" data-view="map">查看学习地图</button></div>
+        <div class="daily-strip"><div><b id="streak">1</b><span>连续修习天数</span></div><div><b id="todayDone">0/15</b><span>今日完成</span></div><div><b id="accuracy">—</b><span>累计正确率</span></div></div>
+      </div>
+      <div class="hero-stage">
+        <div class="moon"></div><div class="mountains"></div><div class="pagoda">⌂</div>
+        <div id="homeAvatar" class="avatar large"></div>
+        <div class="name-card"><span id="heroName">云清瑶</span><small>点击霓裳阁切换主角与装扮</small></div>
+      </div>
+    </section>
+
+    <section id="map" class="view page">
+      <div class="page-head"><div><p class="eyebrow">依教材次序修习</p><h2>九州学习地图</h2></div><div class="selectors"><label>年级<select id="grade"><option value="1">一年级</option><option value="2">二年级</option></select></label><label>学期<select id="term"><option value="上">上册</option><option value="下">下册</option></select></label></div></div>
+      <div class="subject-tabs" id="subjectTabs"><button data-subject="语文" class="active">文华阁 · 语文</button><button data-subject="数学">灵算谷 · 数学</button><button data-subject="英语">听雨轩 · 英语</button></div>
+      <div class="verification-note"><b>教材核对标识</b><span class="badge verified">已核实</span>来自出版社/国家平台可确认目录；<span class="badge pending">待核实</span>暂不作为正式教材目录，仅开放通用能力练习。</div>
+      <div id="unitMap" class="unit-map"></div>
+    </section>
+
+    <section id="daily" class="view page">
+      <div class="page-head"><div><p class="eyebrow">三科各 5 题 · 当日答对首次得贝壳</p><h2>今日修习</h2></div><div id="dailyProgress" class="ring">0<small>/15</small></div></div>
+      <div id="dailyIntro" class="paper-card daily-intro"><div class="lantern">今</div><h3>今日十五问已备好</h3><p>题目按你选择的年级、学期与已开放单元抽取。答错不扣贝壳，会自动收入错题阁。</p><button id="startDaily" class="primary">开始答题</button></div>
+      <div id="quiz" class="quiz hidden"></div>
+      <div id="dailyComplete" class="paper-card complete hidden"><div class="celebrate">✦</div><h3>今日修习完成</h3><p id="completeText"></p><button class="primary" data-view="wardrobe">带着贝壳逛霓裳阁</button></div>
+    </section>
+
+    <section id="mistakes" class="view page">
+      <div class="page-head"><div><p class="eyebrow">温故而知新</p><h2>错题阁</h2></div><button id="clearMastered" class="secondary small">清除已掌握</button></div>
+      <div id="mistakeList" class="mistake-list"></div>
+    </section>
+
+    <section id="poetry" class="view page poetry-page">
+      <div class="page-head"><div><p class="eyebrow">读上句 · 接下句 · 知诗意</p><h2>古诗接龙</h2></div><div id="poetryProgress" class="ring">0<small>/6</small></div></div>
+      <div class="poetry-board paper-card">
+        <div class="poetry-seal">诗</div>
+        <p id="poetryMeta" class="poetry-meta"></p>
+        <h3 id="poetryFirst" class="poetry-first"></h3>
+        <p class="poetry-prompt">请选择能够接上的下一句</p>
+        <div id="poetryChoices" class="poetry-choices"></div>
+        <div id="poetryFeedback"></div>
+      </div>
+    </section>
+
+    <section id="wardrobe" class="view page wardrobe-page">
+      <div class="page-head"><div><p class="eyebrow">学习所得 · 化作云裳</p><h2>霓裳阁</h2></div><div class="character-switch"><button data-char="female" class="active">云清瑶</button><button data-char="male">云景行</button></div></div>
+      <div class="wardrobe-layout">
+        <div class="dressing-stage"><div class="dress-title"><h3 id="dressName">云清瑶</h3><p id="dragHint">先在“已穿戴”中选部件，再移动或缩放</p></div><div class="dress-canvas"><div id="sceneFrame" class="scene-frame"><div id="dressAvatar" class="avatar large"></div></div></div><div class="equipped-caption">已穿戴，点选要调整的部件</div><div id="equippedLayers" class="equipped-layers" role="toolbar" aria-label="选择当前要调整的已穿戴部件"></div><div class="sticker-controls" aria-label="调整当前部件"><button id="scaleDown" class="secondary scale-button" aria-label="缩小当前部件">−</button><label><span id="scaleLabel">当前部件大小 100%</span><input id="scaleRange" type="range" min="50" max="260" step="5" value="100" /></label><button id="scaleUp" class="secondary scale-button" aria-label="放大当前部件">＋</button><div class="nudge-controls" aria-label="轻移当前部件"><button data-nudge="0,-2" aria-label="向上移动">↑</button><button data-nudge="-2,0" aria-label="向左移动">←</button><button data-layer-reset aria-label="恢复当前部件位置和大小">复位</button><button data-nudge="2,0" aria-label="向右移动">→</button><button data-nudge="0,2" aria-label="向下移动">↓</button></div></div><div class="look-actions"><button id="saveLook" class="primary">保存当前</button></div></div>
+        <div><div class="shop-tabs" id="shopTabs"><button data-type="head" class="active">配饰 · 30</button><button data-type="hair">发型 · 30</button><button data-type="outfit">服饰 · 30</button><button data-type="shoes">鞋履 · 10</button><button data-type="prop">手持 · 30</button><button data-type="background">背景 · 30</button><button data-type="pet">灵宠</button></div><div id="shopGrid" class="shop-grid"></div></div>
+      </div>
+    </section>
+  </main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script><script src="question-bank.js"></script><script src="app.js"></script>
+</body>
+</html>
