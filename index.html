@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#f7efe4" />
   <title>云裳物语 · 古风仙境学习冒险</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="art.css" />
 </head>
@@ -13,7 +14,7 @@
   <header class="topbar">
     <button class="brand" data-view="home" aria-label="回到仙境首页"><span class="seal">云</span><span><b>云裳物语</b><small>古风仙境学习冒险</small></span></button>
     <nav id="nav" aria-label="主要页面">
-      <button data-view="home" class="active">仙境</button><button data-view="map">学习地图</button><button data-view="daily">今日修习</button><button data-view="poetry">诗词接龙</button><button data-view="mistakes">错题阁</button><button data-view="wardrobe">霓裳阁</button>
+      <button data-view="home" class="active">仙境</button><button data-view="map">学习地图</button><button data-view="daily">今日修习</button><button data-view="poetry">诗词接龙</button><button data-view="mistakes">错题阁</button><button data-view="wish">祈愿阁</button><button data-view="wardrobe">霓裳阁</button>
     </nav>
     <div class="shell-pill" aria-label="小贝壳余额"><span>◒</span><b id="shellCount">0</b> 小贝壳</div>
   </header>
@@ -65,6 +66,26 @@
       </div>
     </section>
 
+    <section id="wish" class="view page wish-page">
+      <div class="page-head wish-head"><div><p class="eyebrow">月华映物 · 所愿终会相逢</p><h2>云梦祈愿阁</h2></div><div class="wish-character-switch" role="group" aria-label="选择祈愿角色"><button data-wish-char="female" class="active">云清瑶卡池</button><button data-wish-char="male">云景行卡池</button></div></div>
+      <div class="wish-layout">
+        <div class="wish-sanctum">
+          <div class="wish-sky" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="wish-mirror" aria-hidden="true"><span class="wish-orbit orbit-a"></span><span class="wish-orbit orbit-b"></span><span class="wish-seal">愿</span></div>
+          <div class="wish-copy"><span id="wishPoolLabel">云清瑶专属祈愿</span><h3>轻叩月华镜，唤来一件云裳</h3><p>卡池只出现当前角色可使用的装扮；十次祈愿内必得一件珍藏。</p></div>
+          <div class="wish-progress" aria-label="祈愿保底进度"><div><span>珍藏保底</span><b id="wishPityText">0 / 10</b></div><div class="wish-progress-track"><i id="wishPityBar"></i></div></div>
+          <div class="wish-actions"><button id="wishSingle" class="wish-button secondary"><small id="wishSingleHint">每日免费一次</small><b>祈愿一次</b><span id="wishSingleCost">免费</span></button><button id="wishFive" class="wish-button primary"><small>五次必含未拥有物品</small><b>祈愿五次</b><span>◒ 20</span></button></div>
+          <p class="wish-rule-note">仅使用学习获得的小贝壳 · 概率公开 · 重复装扮自动化为云锦碎片</p>
+        </div>
+        <aside class="wish-ledger">
+          <div class="wish-balance"><div><span>云锦碎片</span><b id="fragmentCount">0</b></div><button id="openWishExchange" class="secondary small">碎片兑换</button></div>
+          <div class="wish-rates"><h3>本期祈愿</h3><div><span><i class="rarity-dot treasure"></i>珍藏</span><b>10%</b></div><div><span><i class="rarity-dot elegant"></i>雅品</span><b>30%</b></div><div><span><i class="rarity-dot common"></i>常品</span><b>60%</b></div></div>
+          <div class="wish-pool-preview"><h3>卡池一览</h3><div id="wishPoolPreview"></div><button id="viewWishPool" class="secondary small">查看全部卡池</button></div>
+          <div class="wish-history"><h3>最近获得</h3><div id="wishHistory"></div></div>
+        </aside>
+      </div>
+    </section>
+
     <section id="wardrobe" class="view page wardrobe-page">
       <div class="page-head"><div><p class="eyebrow">学习所得 · 化作云裳</p><h2>霓裳阁</h2></div><div class="character-switch"><button data-char="female" class="active">云清瑶</button><button data-char="male">云景行</button></div></div>
       <div class="wardrobe-layout">
@@ -73,6 +94,8 @@
       </div>
     </section>
   </main>
+  <div id="wishReveal" class="wish-reveal hidden" role="dialog" aria-modal="true" aria-labelledby="wishRevealTitle"><div class="wish-reveal-panel"><div class="reveal-radiance" aria-hidden="true"></div><div class="reveal-head"><div><p>月华回应了你的心愿</p><h2 id="wishRevealTitle">祈愿结果</h2></div><button id="skipWishReveal" class="secondary small">全部揭晓</button></div><div id="wishResultCards" class="wish-result-cards"></div><div class="reveal-actions"><p id="wishResultSummary"></p><button id="closeWishReveal" class="primary">收入衣橱</button></div></div></div>
+  <div id="wishDrawer" class="wish-drawer hidden" role="dialog" aria-modal="true" aria-labelledby="wishDrawerTitle"><div class="wish-drawer-panel"><div class="drawer-head"><div><p class="eyebrow">当前角色专属</p><h2 id="wishDrawerTitle">祈愿卡池</h2></div><button id="closeWishDrawer" class="secondary small">关闭</button></div><div class="drawer-tabs"><button data-drawer-mode="pool" class="active">全部卡池</button><button data-drawer-mode="exchange">碎片兑换</button></div><div id="wishDrawerGrid" class="wish-drawer-grid"></div></div></div>
   <div id="toast" role="status" aria-live="polite"></div>
   <script src="data.js"></script><script src="question-bank.js"></script><script src="app.js"></script>
 </body>
